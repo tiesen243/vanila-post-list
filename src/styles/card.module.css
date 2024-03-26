@@ -1,0 +1,50 @@
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.isPressable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.isPressable:hover {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.isPressable:active {
+  scale: 0.99;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card__description {
+  font-size: 1rem;
+}
+
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}

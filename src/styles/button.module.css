@@ -1,0 +1,69 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:hover:not(:disabled) {
+  scale: 0.96;
+}
+.btn:active:not(:disabled) {
+  scale: 1;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button variants */
+
+.primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.destructive {
+  background-color: var(--destructive);
+  color: var(--destructive-foreground);
+}
+
+.outline {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+/* Button sizes */
+
+.sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.md {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+.icon {
+  size: 1.5rem;
+  aspect-ratio: 1;
+}
