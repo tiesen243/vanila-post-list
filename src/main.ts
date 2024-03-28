@@ -6,10 +6,11 @@ import './globals.css'
 import { disableReload } from './lib/disable-reload'
 
 // Inject the app into the DOM
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = App(getTitles())
+const main = () => {
+  document.querySelector<HTMLDivElement>('#app')!.innerHTML = App(getTitles())
+  changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
+}
+main()
 
-// Disable page reload on navigation
-disableReload(document.querySelectorAll<HTMLAnchorElement>('.nav-link'), App)
-
-// Change theme on button click
-changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
+// Disable page reloads when navigating
+disableReload(document.querySelectorAll<HTMLAnchorElement>('.nav-link'), main)
