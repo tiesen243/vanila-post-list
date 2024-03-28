@@ -1,8 +1,10 @@
 import { ChevronRight } from 'lucide-static'
+
 import { buttonVariants } from '../ui/button'
 import * as card from '../ui/card'
 
 import styles from './styles.module.css'
+import image from '/4.png'
 
 export const PostList = () => `
   <section class="${styles.post}">
@@ -18,7 +20,7 @@ export const PostList = () => `
               `,
             })}
             ${card.CardContent({
-              children: `<img src="/4.png" alt="img-${i}" class="${styles.post__img}" loading="lazy" />`,
+              children: `<img src="${image}" alt="img-${i}" class="${styles.post__img}" loading="lazy" />`,
             })}
             ${card.CardFooter({
               children: `

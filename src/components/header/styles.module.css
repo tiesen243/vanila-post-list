@@ -9,21 +9,57 @@
   backdrop-filter: blur(24px) saturate(150%);
 }
 
-.wrapper {
+.header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.title {
+/* Brand section */
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: hsl(var(--foreground));
+}
+
+.header__logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.header__title {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-.logo {
-  text-decoration: none;
-  color: var(--foreground);
+.header__right {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+
+/* Navigation section */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__link {
+  color: hsl(var(--muted-foreground));
+  text-decoration: none;
+  text-underline-offset: 0.25rem;
+}
+.header__link:hover {
+  text-decoration: underline;
+}
+
+.header__link_active {
+  color: hsl(var(--foreground));
+}
+.header__link_active:hover {
+  text-decoration: none;
 }
