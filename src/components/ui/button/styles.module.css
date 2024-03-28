@@ -7,7 +7,6 @@
   font-size: 1rem;
   font-weight: 500;
   box-shadow: 0 0 0 1px hsl(var(--background)) inset;
-  transition: background-color 0.2s ease;
   cursor: pointer;
 }
 

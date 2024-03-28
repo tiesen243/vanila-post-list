@@ -12,7 +12,6 @@
 .isPressable {
   cursor: pointer;
   user-select: none;
-  transition: all 0.2s ease;
 }
 .isPressable:hover {
   background-color: hsl(var(--secondary));

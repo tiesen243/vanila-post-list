@@ -11,7 +11,6 @@ export const PostList = () => `
     ${Array.from({ length: 16 })
       .map((_, i) =>
         card.Card({
-          isPressable: true,
           children: `
             ${card.CardHeader({
               children: `

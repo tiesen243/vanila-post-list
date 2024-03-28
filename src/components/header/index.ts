@@ -19,7 +19,18 @@ export const Header = ({ pathName }: { pathName: string }) => `
       
       <section class="${styles.header__right}">
         <nav class="${styles.header__nav}">
-          ${navs.map((nav) => `<a href="${nav.href}" class="${styles.header__link} ${pathName === nav.href ? styles.header__link_active : ''}">${nav.name}</a>`).join('')}
+          ${navs
+            .map(
+              (nav) => `
+                <a 
+                  href="${nav.href}" 
+                  class="${styles.header__link} ${pathName === nav.href ? styles.header__link_active : ''} nav-link"
+                >
+                  ${nav.name}
+                </a>
+              `,
+            )
+            .join('')}
         </nav>
 
         ${Button({ btnText: 'A', variant: 'outline', size: 'icon', className: 'theme-btn' })}

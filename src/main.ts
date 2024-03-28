@@ -1,11 +1,20 @@
 import App from './app'
-import './globals.css'
 import { changeTheme } from './lib/theme'
+import { getTitles } from './lib/utils'
 
-const pathName = window.location.pathname
-const title = pathName === '/' ? 'Home' : pathName.slice(1).charAt(0).toUpperCase() + pathName.slice(2)
+import './globals.css'
 
 // Inject the app into the DOM
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = App({ title, pathName })
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = App(getTitles())
+
+const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link')
+navLinks.forEach((link) => {
+  link.addEventListener('click', (e: Event) => {
+    e.preventDefault()
+    window.history.pushState({}, '', link.href)
+    document.querySelector<HTMLDivElement>('#app')!.innerHTML = App(getTitles())
+    changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
+  })
+})
 
 changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
