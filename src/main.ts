@@ -3,18 +3,13 @@ import { changeTheme } from './lib/theme'
 import { getTitles } from './lib/utils'
 
 import './globals.css'
+import { disableReload } from './lib/disable-reload'
 
 // Inject the app into the DOM
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = App(getTitles())
 
-const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link')
-navLinks.forEach((link) => {
-  link.addEventListener('click', (e: Event) => {
-    e.preventDefault()
-    window.history.pushState({}, '', link.href)
-    document.querySelector<HTMLDivElement>('#app')!.innerHTML = App(getTitles())
-    changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
-  })
-})
+// Disable page reload on navigation
+disableReload(document.querySelectorAll<HTMLAnchorElement>('.nav-link'), App)
 
+// Change theme on button click
 changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
