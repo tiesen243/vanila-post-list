@@ -8,7 +8,7 @@ import image from '/4.png'
 
 export const PostList = () => `
   <section class="${styles.post}">
-    ${Array.from({ length: 16 })
+    ${Array.from({ length: 12 })
       .map((_, i) =>
         card.Card({
           children: `
