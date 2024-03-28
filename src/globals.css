@@ -60,7 +60,6 @@
   border: none;
   background-color: transparent;
   border-color: hsl(var(--border));
-  transition: all 0.2s ease;
 }
 
 /* prettier-ignore */
