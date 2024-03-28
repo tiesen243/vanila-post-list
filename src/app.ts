@@ -1,7 +1,7 @@
 // Layout
 import { Footer } from './components/footer'
 import { Header } from './components/header'
-import routes from './lib/routes'
+import routes from './routes'
 
 interface AppProps {
   title: string
