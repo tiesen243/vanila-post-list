@@ -10,10 +10,8 @@ interface ButtonProps {
 export const buttonVariants = ({ variant = 'primary', size = 'md', className = '' }: Omit<ButtonProps, 'btnText'>) =>
   `${styles.base} ${styles[variant]} ${styles[size]} ${className}`
 
-const Button = ({ btnText, variant = 'primary', size = 'md', className = '' }: ButtonProps) => `
+export const Button = ({ btnText, variant = 'primary', size = 'md', className = '' }: ButtonProps) => `
   <button class="${buttonVariants({ variant, size, className })}">
     ${btnText}
   </button>
 `
-
-export default Button

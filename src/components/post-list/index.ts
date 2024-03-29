@@ -1,10 +1,10 @@
 import { ChevronRight } from 'lucide-static'
 
-import { buttonVariants } from '../ui/button'
-import * as card from '../ui/card'
+import { buttonVariants } from '@/components/ui/button'
+import * as card from '@/components/ui/card'
+import image from '/4.png'
 
 import styles from './styles.module.css'
-import image from '/4.png'
 
 export const PostList = () => `
   <section class="${styles.post}">
@@ -24,10 +24,8 @@ export const PostList = () => `
             ${card.CardFooter({
               children: `
                 <a 
-                  href="https://youtu.be/dQw4w9WgXcQ" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="${buttonVariants({ className: styles.post__btn })}"
+                  href="/posts/${i + 1}" 
+                  class="${buttonVariants({ className: `${styles.post__btn} nav-link` })}"
                 >
                   Read more ${ChevronRight} 
                 </a>

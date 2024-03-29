@@ -17,6 +17,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
 

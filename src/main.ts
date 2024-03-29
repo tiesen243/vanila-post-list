@@ -1,13 +1,13 @@
-import App from './app'
-import { changeTheme } from './lib/theme'
-import { getTitles } from './lib/utils'
-import { disableReload } from './lib/disable-reload'
+import App from '@/app'
+import { changeTheme, disableReload } from '@/lib'
 
-import './globals.css'
+import '@/globals.css'
 
 // Inject the app into the DOM
+
 const main = () => {
-  document.querySelector<HTMLDivElement>('#app')!.innerHTML = App(getTitles())
+  const pathName = window.location.pathname
+  document.querySelector<HTMLDivElement>('#app')!.innerHTML = App({ pathName })
   changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
 }
 main()

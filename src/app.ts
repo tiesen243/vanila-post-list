@@ -1,15 +1,11 @@
 // Layout
-import { Footer } from './components/footer'
-import { Header } from './components/header'
-import routes from './routes'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
 
-interface AppProps {
-  title: string
-  pathName: string
-}
+// Routes
+import routes from '@/routes'
 
-const App = (props: AppProps): string => `
-  <title>${props.title}</title>
+const App = (props: { pathName: string }): string => `
   ${Header({ pathName: props.pathName })}
 
   <main class="container" style="flex-grow: 1;">

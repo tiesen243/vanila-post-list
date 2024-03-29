@@ -1,15 +1,16 @@
 {
-  "name": "vanilla-ts",
+  "name": "vanilla-blogs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
-    "build": "bunx --bun tsc && bunx --bun vite build",
-    "preview": "bunx --bun vite preview --port 3000",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 3000",
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@types/node": "^20.11.30",
     "prettier": "^3.2.5",
     "typescript": "^5.2.2",
     "typescript-plugin-css-modules": "^5.1.0",
