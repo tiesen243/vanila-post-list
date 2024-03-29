@@ -14,7 +14,7 @@ export const PostList = () => `
           children: `
             ${card.CardHeader({
               children: `
-                ${card.CardTitle({ children: `Post Title ${i + 1}` })}
+                ${card.CardTitle({ children: `Blog ${i + 1}` })}
                 ${card.CardDescription({ children: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing' })}
               `,
             })}
@@ -24,7 +24,7 @@ export const PostList = () => `
             ${card.CardFooter({
               children: `
                 <a 
-                  href="/posts/${i + 1}" 
+                  href="/blogs/${i + 1}" 
                   class="${buttonVariants({ className: `${styles.post__btn} nav-link` })}"
                 >
                   Read more ${ChevronRight} 
