@@ -3,9 +3,10 @@ import { PostList } from '@/components/post-list'
 import styles from './styles.module.css'
 
 export const BlogsPage = () => {
-  document.title = 'Blogs - Latest Posts'
+  document.title = 'Blogs'
+
   return `
-    <h2 class="${styles.title}">Latest Posts</h2>
+    <h2 class="${styles.title}">Latest Blogs</h2>
     ${PostList()}
 `
 }
