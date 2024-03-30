@@ -11,18 +11,18 @@ export const PostList = () => `
     ${Array.from({ length: 12 })
       .map((_, i) =>
         card.Card({
-          children: `
+          innerHTML: `
             ${card.CardHeader({
-              children: `
-                ${card.CardTitle({ children: `Blog ${i + 1}` })}
-                ${card.CardDescription({ children: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing' })}
+              innerHTML: `
+                ${card.CardTitle({ innerHTML: `Blog ${i + 1}` })}
+                ${card.CardDescription({ innerHTML: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing' })}
               `,
             })}
             ${card.CardContent({
-              children: `<img src="${image}" alt="img-${i}" class="${styles.post__img}" loading="lazy" />`,
+              innerHTML: `<img src="${image}" alt="img-${i}" class="${styles.post__img}" loading="lazy" />`,
             })}
             ${card.CardFooter({
-              children: `
+              innerHTML: `
                 <a 
                   href="/blogs/${i + 1}" 
                   class="${buttonVariants({ className: `${styles.post__btn} nav-link` })}"

@@ -34,7 +34,7 @@ export const Header = ({ pathName }: { pathName: string }) => {
               .join('')}
           </nav>
 
-          ${Button({ btnText: '', variant: 'outline', size: 'icon', className: 'theme-btn', otherProps: 'aria-label="Toggle theme"' })}
+          ${Button({ variant: 'outline', size: 'icon', className: 'theme-btn', ariaLabel: 'Toggle theme' })}
         </section>
       </div>
     </header>
