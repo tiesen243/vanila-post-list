@@ -8,9 +8,7 @@ import routes from '@/routes'
 const App = (props: { pathName: string }): string => `
   ${Header({ pathName: props.pathName })}
 
-  <main class="container" style="flex-grow: 1;">
-    ${routes(props.pathName)}
-  </main>
+  ${routes(props.pathName)}
 
   ${Footer()}
 `

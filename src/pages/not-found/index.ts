@@ -4,8 +4,9 @@ import styles from './styles.module.css'
 
 export const NotFoundPage = () => {
   document.title = '404 | Page not found'
+
   return `
-    <section class="${styles.wrapper}">
+    <main class="${styles.wrapper}">
       <h2 class="${styles.title}">404 | Page not found</h2>
     
       <p class="${styles.description}">
@@ -15,6 +16,6 @@ export const NotFoundPage = () => {
       <a href="/" class="${styles.link} nav-link">
         Go back to the homepage ${ChevronRight}
       </a>
-    </section>
+    </main>
 `
 }
