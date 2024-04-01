@@ -7,9 +7,7 @@ import routes from '@/routes'
 
 const App = (props: { pathName: string }): string => `
   ${Header({ pathName: props.pathName })}
-
   ${routes(props.pathName)}
-
   ${Footer()}
 `
 

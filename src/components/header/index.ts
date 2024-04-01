@@ -14,6 +14,7 @@ export const Header = ({ pathName }: { pathName: string }) => {
   document.addEventListener('DOMContentLoaded', () => {
     changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
   })
+
   return `
     <header class="${styles.header}">
       <div class="container ${styles.header__wrapper}"> 
