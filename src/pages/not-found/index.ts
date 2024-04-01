@@ -13,7 +13,7 @@ export const NotFoundPage = () => {
         The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
       </p>
 
-      <a href="/" class="${styles.link} nav-link">
+      <a href="/" class="${styles.link}">
         Go back to the homepage ${ChevronRight}
       </a>
     </main>

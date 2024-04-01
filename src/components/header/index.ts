@@ -2,6 +2,7 @@ import logo from '/vite.svg'
 
 import { Button } from '@/components/ui/button'
 import styles from './styles.module.css'
+import { changeTheme } from '@/lib'
 
 const navs = [
   { name: 'Home', href: '/' },
@@ -10,10 +11,13 @@ const navs = [
 ]
 
 export const Header = ({ pathName }: { pathName: string }) => {
+  document.addEventListener('DOMContentLoaded', () => {
+    changeTheme(document.querySelector<HTMLButtonElement>('.theme-btn')!)
+  })
   return `
     <header class="${styles.header}">
       <div class="container ${styles.header__wrapper}"> 
-        <a href="/" class="${styles.header__brand} nav-link">
+        <a href="/" class="${styles.header__brand}">
           <img src="${logo}" alt="Vite logo" loading="lazy" class="${styles.header__logo}" />
           <h1 class="${styles.header__title}">Blog</h1>
         </a>

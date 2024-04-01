@@ -1,15 +1,12 @@
 import { Button } from '@/components/ui/button'
 import styles from './styles.module.css'
+import { counter } from '@/lib'
 
 export const HomePage = () => {
   document.title = 'Vite + TS Blog'
 
   document.addEventListener('DOMContentLoaded', () => {
-    let count = 0
-    document.querySelector<HTMLButtonElement>('.counter-btn')!.addEventListener('click', function () {
-      count += 1
-      this.innerHTML = `Counter: ${count}`
-    })
+    counter(document.querySelector<HTMLButtonElement>('.counter-btn')!)
   })
 
   return `
