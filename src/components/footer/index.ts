@@ -1,6 +1,7 @@
+import { html } from '@/lib/utils'
 import styles from './styles.module.css'
 
-export const Footer = (): string => `
+export const Footer = (): string => html`
   <footer class="${styles.footer}">
     <div class="container ${styles.footer__wrapper}">
       <p class="${styles.footer__text}">

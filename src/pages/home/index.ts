@@ -1,5 +1,6 @@
-import { Button } from '@/components/ui'
-import { counter } from '@/lib'
+import { Button } from '@/components/ui/button'
+import { html } from '@/lib/utils'
+import { counter } from './counter'
 import styles from './styles.module.css'
 
 export const HomePage = () => {
@@ -9,7 +10,7 @@ export const HomePage = () => {
     counter(document.querySelector<HTMLButtonElement>('.counter-btn')!)
   })
 
-  return `
+  return html`
     <main class="container ${styles.wrapper}">
       <h2 class="${styles.title}">Welcome to my blog</h2>
       <p class="${styles.description}">This is a simple blog built with Vite + TypeScript</p>

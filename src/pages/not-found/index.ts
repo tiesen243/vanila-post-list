@@ -1,11 +1,12 @@
 import { ChevronRight } from 'lucide-static'
 
+import { html } from '@/lib/utils'
 import styles from './styles.module.css'
 
 export const NotFoundPage = () => {
   document.title = '404 | Page not found'
 
-  return `
+  return html`
     <main class="${styles.wrapper}">
       <h2 class="${styles.title}">404 | Page not found</h2>
 

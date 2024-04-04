@@ -1,4 +1,4 @@
-import { formatProps } from '@/lib'
+import { formatProps, html } from '@/lib/utils'
 import styles from './styles.module.css'
 
 interface ButtonProps extends Partial<HTMLButtonElement> {
@@ -14,4 +14,4 @@ export const buttonVariants = ({
   `${styles.base} ${styles[variant]} ${styles[size]} ${className}`
 
 export const Button = ({ variant = 'primary', size = 'md', className = '', innerHTML = '', ...rest }: ButtonProps) =>
-  `<button class="${buttonVariants({ variant, size, className })}" ${formatProps(rest)}>${innerHTML}</button>`
+  html`<button class="${buttonVariants({ variant, size, className })}" ${formatProps(rest)}>${innerHTML}</button>`

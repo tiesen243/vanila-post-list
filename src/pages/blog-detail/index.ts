@@ -1,6 +1,7 @@
 import { ChevronLeft } from 'lucide-static'
 
-import { buttonVariants } from '@/components/ui'
+import { buttonVariants } from '@/components/ui/button'
+import { html } from '@/lib/utils'
 import styles from './styles.module.css'
 import image from '/4.png'
 
@@ -11,7 +12,7 @@ interface Props {
 export const BlogDetailPage = ({ id }: Props) => {
   document.title = `Blog ${id}`
 
-  return `
+  return html`
     <main class="${styles.wrapper}">
       <a href="/blogs" class="${buttonVariants({ variant: 'outline', size: 'icon' })} nav-link"> ${ChevronLeft} </a>
 

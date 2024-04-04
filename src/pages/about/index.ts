@@ -1,9 +1,10 @@
+import { html } from '@/lib/utils'
 import styles from './styles.module.css'
 
 export const AboutPage = () => {
   document.title = 'About'
 
-  return `
+  return html`
     <main class="container ${styles.wrapper}">
       <h2 class="${styles.title}">About</h2>
       <p class="${styles.description}">
