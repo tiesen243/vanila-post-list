@@ -1,7 +1,7 @@
 import styles from './styles.module.css'
 
-export const Footer = () => `
-    <footer class="${styles.footer}">
+export const Footer = (): string => `
+  <footer class="${styles.footer}">
     <div class="container ${styles.footer__wrapper}">
       <p class="${styles.footer__text}">
         Copyright © ${new Date().getFullYear()} |

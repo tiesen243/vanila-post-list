@@ -6,9 +6,9 @@ import { Header } from '@/components/header'
 import routes from '@/routes'
 
 const App = (props: { pathName: string }): string => `
-  ${Header({ pathName: props.pathName })}
-  ${routes(props.pathName)}
+  ${Header({ pathName: props.pathName })} 
+  ${routes(props.pathName)} 
   ${Footer()}
-`
+  `
 
 export default App

@@ -10,5 +10,5 @@ export const BlogsPage = () => {
       <h2 class="${styles.title}">Latest Blogs</h2>
       ${PostList()}
     </main>
-`
+  `
 }

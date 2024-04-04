@@ -1,38 +1,37 @@
 import { ChevronRight } from 'lucide-static'
 
-import { buttonVariants } from '@/components/ui/button'
-import * as card from '@/components/ui/card'
+import * as ui from '@/components/ui'
+import styles from './styles.module.css'
 import image from '/4.png'
 
-import styles from './styles.module.css'
-
-export const PostList = () => `
+export const PostList = (): string => `
   <section class="${styles.post}">
     ${Array.from({ length: 12 })
-      .map((_, i) =>
-        card.Card({
+    .map((_, i) =>
+      ui.Card({
+        innerHTML: `
+            ${ui.CardHeader({
           innerHTML: `
-            ${card.CardHeader({
-              innerHTML: `
-                ${card.CardTitle({ innerHTML: `Blog ${i + 1}` })}
-                ${card.CardDescription({ innerHTML: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing' })}
+                ${ui.CardTitle({ innerHTML: `Blog ${i + 1}` })}
+                ${ui.CardDescription({ innerHTML: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing' })}
               `,
-            })}
-            ${card.CardContent({
-              innerHTML: `<img src="${image}" alt="img-${i}" class="${styles.post__img}" loading="lazy" />`,
-            })}
-            ${card.CardFooter({
-              innerHTML: `
+        })}
+            ${ui.CardContent({
+          innerHTML: `<img src="${image}" alt="img-${i}" class="${styles.post__img}" loading="lazy" />`,
+        })}
+            ${ui.CardFooter({
+          innerHTML: `
                 <a 
                   href="/blogs/${i + 1}" 
-                  class="${buttonVariants({ className: `${styles.post__btn} nav-link` })}"
+                  class="${ui.buttonVariants({ className: `${styles.post__btn} nav-link` })}"
                 >
                   Read more ${ChevronRight} 
                 </a>
               `,
-            })}
+        })}
           `,
-        }),
-      )
-      .join('')}
-    </section>`
+      }),
+    )
+    .join('')}
+  </section>
+`

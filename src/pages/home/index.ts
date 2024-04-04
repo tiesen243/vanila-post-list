@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button'
-import styles from './styles.module.css'
+import { Button } from '@/components/ui'
 import { counter } from '@/lib'
+import styles from './styles.module.css'
 
 export const HomePage = () => {
   document.title = 'Vite + TS Blog'
@@ -15,5 +15,5 @@ export const HomePage = () => {
       <p class="${styles.description}">This is a simple blog built with Vite + TypeScript</p>
       ${Button({ innerHTML: 'Counter: 0', className: 'counter-btn' })}
     </main>
-`
+  `
 }
