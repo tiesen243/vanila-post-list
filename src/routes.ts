@@ -14,13 +14,8 @@ const routes = (pathName: string) => {
 
     // case '/blogs/:name':
     case /^\/blogs\/[a-z0-9-]+/i.test(pathName) ? pathName : '':
-      const blogs = Object.keys(import.meta.glob('./blogs/*.md')).map((path) => {
-        const fileName = path.split('/').pop()!.replace('.md', '')
-        return fileName
-      })
-      const postId = pathName.split('/')[2]
-      if (!blogs.includes(postId)) return NotFoundPage()
-      return BlogDetailPage({ id: String(postId) })
+      const postName = pathName.split('/')[2]
+      return BlogDetailPage({ postName: String(postName) })
 
     case '/about':
       return AboutPage()

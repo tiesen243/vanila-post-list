@@ -3,24 +3,23 @@ import showdown from 'showdown'
 
 import { buttonVariants } from '@/components/ui/button'
 import { html } from '@/lib/utils'
-import styles from './styles.module.css'
 import './markdown.css'
+import styles from './styles.module.css'
 
 interface Props {
-  id: string
+  postName: string
 }
 
-export const BlogDetailPage = ({ id }: Props) => {
-  document.title = id.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase()) + ' | Blog'
+export const BlogDetailPage = ({ postName }: Props) => {
+  document.title = postName.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase()) + ' | Blog'
 
-  import(`../../blogs/${id}.md` as any).then((res) => {
-    fetch(res.default)
-      .then((res) => res.text())
-      .then((res) => {
-        const converter = new showdown.Converter()
-        document.querySelector('.content')!.innerHTML = converter.makeHtml(res)
-      })
-  })
+  import(`../../blogs/${postName}.md`)
+    .then((module) => {
+      fetch(module.default)
+        .then((res) => res.text())
+        .then((text) => (document.querySelector('.content')!.innerHTML = new showdown.Converter().makeHtml(text)))
+    })
+    .catch(() => (window.location.href = '/404'))
 
   return html`
     <main class="${styles.wrapper}">

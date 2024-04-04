@@ -7,7 +7,7 @@ import styles from './styles.module.css'
 import image from '/4.png'
 
 export const PostList = (): string => {
-  const blogs = Object.keys(import.meta.glob('../../blogs/*.md')).map((path) => {
+  const blogs = Object.keys(import.meta.glob('@/blogs/*.md')).map((path) => {
     const fileName = path.split('/').pop()!.replace('.md', '')
     return fileName
   })
