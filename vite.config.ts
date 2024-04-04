@@ -8,6 +8,7 @@ const config: UserConfig = {
       '@': path.resolve(__dirname, './src'),
     },
   },
+  assetsInclude: ['**/*.md'],
 }
 
 export default config

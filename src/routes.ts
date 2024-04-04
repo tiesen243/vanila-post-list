@@ -12,10 +12,14 @@ const routes = (pathName: string) => {
     case '/blogs':
       return BlogsPage()
 
-    case /^\/blogs\/\d+$/.test(pathName) ? pathName : '':
-      const postId = parseInt(pathName.split('/')[2])
-
-      if (postId > 12 || postId <= 0) return NotFoundPage()
+    // case '/blogs/:name':
+    case /^\/blogs\/[a-z0-9-]+/i.test(pathName) ? pathName : '':
+      const blogs = Object.keys(import.meta.glob('./blogs/*.md')).map((path) => {
+        const fileName = path.split('/').pop()!.replace('.md', '')
+        return fileName
+      })
+      const postId = pathName.split('/')[2]
+      if (!blogs.includes(postId)) return NotFoundPage()
       return BlogDetailPage({ id: String(postId) })
 
     case '/about':

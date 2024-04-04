@@ -6,15 +6,21 @@ import { html } from '@/lib/utils'
 import styles from './styles.module.css'
 import image from '/4.png'
 
-export const PostList = (): string => html`
-  <section class="${styles.post}">
-    ${Array.from({ length: 12 })
-      .map((_, i) =>
-        Card({
-          innerHTML: `
+export const PostList = (): string => {
+  const blogs = Object.keys(import.meta.glob('../../blogs/*.md')).map((path) => {
+    const fileName = path.split('/').pop()!.replace('.md', '')
+    return fileName
+  })
+
+  return html`
+    <section class="${styles.post}">
+      ${blogs
+        .map((blog, i) =>
+          Card({
+            innerHTML: `
             ${CardHeader({
               innerHTML: `
-                ${CardTitle({ innerHTML: `Blog ${i + 1}` })}
+                ${CardTitle({ className: styles.post__title, innerHTML: blog.replace(/-/g, ' ') })}
                 ${CardDescription({ innerHTML: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing' })}
               `,
             })}
@@ -24,7 +30,7 @@ export const PostList = (): string => html`
             ${CardFooter({
               innerHTML: `
                 <a 
-                  href="/blogs/${i + 1}" 
+                  href="/blogs/${blog}" 
                   class="${buttonVariants({ className: `${styles.post__btn} nav-link` })}"
                 >
                   Read more ${ChevronRight} 
@@ -32,8 +38,9 @@ export const PostList = (): string => html`
               `,
             })}
           `,
-        }),
-      )
-      .join('')}
-  </section>
-`
+          }),
+        )
+        .join('')}
+    </section>
+  `
+}
