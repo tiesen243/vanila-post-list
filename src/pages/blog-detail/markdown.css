@@ -78,6 +78,7 @@ pre {
   border-radius: var(--radius);
   background-color: hsl(var(--secondary));
   color: hsl(var(--secondary-foreground));
+  overflow-x: auto;
 }
 
 img {
