@@ -14,3 +14,26 @@
   letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
 }
+
+.title {
+  padding-bottom: 0.5rem;
+  border-bottom-width: 1px;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  scroll-margin: 5rem;
+}
+
+.content {
+  line-height: 1.75rem;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}

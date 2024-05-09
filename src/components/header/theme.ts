@@ -2,7 +2,7 @@ import { Moon, Sun } from 'lucide-static'
 
 export const changeTheme = (ele: HTMLButtonElement) => {
   // Check if there's a theme preference stored in localStorage
-  const currentTheme = localStorage.getItem('theme') || 'light'
+  const currentTheme = localStorage.getItem('theme') ?? 'light'
   ele.innerHTML = currentTheme === 'dark' ? Sun : Moon
 
   // If a theme preference exists, apply it

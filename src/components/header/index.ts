@@ -7,7 +7,7 @@ import { changeTheme } from './theme'
 
 const navs = [
   { name: 'Home', href: '/' },
-  { name: 'Blogs', href: '/blogs' },
+  { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
 ]
 

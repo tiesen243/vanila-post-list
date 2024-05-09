@@ -1,7 +1,7 @@
 import { formatProps, html } from '@/lib/utils'
 import styles from './styles.module.css'
 
-interface CardProps extends Partial<HTMLElement> {}
+type CardProps = Partial<HTMLElement>
 
 export const Card = ({
   innerHTML = '',

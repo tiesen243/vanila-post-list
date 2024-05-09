@@ -1,6 +1,8 @@
 import type { UserConfig } from 'vite'
 import path from 'path'
 
+import eslint from 'vite-plugin-eslint'
+
 const config: UserConfig = {
   base: '/',
   resolve: {
@@ -8,7 +10,7 @@ const config: UserConfig = {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  assetsInclude: ['**/*.md'],
+  plugins: [eslint()],
 }
 
 export default config
